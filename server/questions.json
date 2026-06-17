@@ -1,0 +1,262 @@
+[
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the SI unit of force?",
+    "options": [
+      "Joule",
+      "Newton",
+      "Watt",
+      "Pascal"
+    ],
+    "correctAnswer": "Newton",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "If an object is moving with a constant velocity, what is its acceleration?",
+    "options": [
+      "Constant and positive",
+      "Increasing",
+      "Zero",
+      "Dependent on the mass"
+    ],
+    "correctAnswer": "Zero",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Which of Newton's laws states that for every action, there is an equal and opposite reaction?",
+    "options": [
+      "First Law",
+      "Second Law",
+      "Third Law",
+      "Law of Gravitation"
+    ],
+    "correctAnswer": "Third Law",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the value of acceleration due to gravity (g) near the Earth's surface?",
+    "options": [
+      "8.9 m/s²",
+      "9.8 m/s²",
+      "10.5 m/s²",
+      "12.0 m/s²"
+    ],
+    "correctAnswer": "9.8 m/s²",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "The rate of change of work done is known as:",
+    "options": [
+      "Energy",
+      "Force",
+      "Power",
+      "Momentum"
+    ],
+    "correctAnswer": "Power",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "At what temperature do both the Celsius and Fahrenheit scales show the same reading?",
+    "options": [
+      "0°",
+      "-40°",
+      "40°",
+      "-100°"
+    ],
+    "correctAnswer": "-40°",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Which method of heat transfer does not require a medium?",
+    "options": [
+      "Conduction",
+      "Convection",
+      "Radiation",
+      "Absorption"
+    ],
+    "correctAnswer": "Radiation",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What happens to the volume of water when it freezes into ice?",
+    "options": [
+      "It decreases",
+      "It increases",
+      "It remains the same",
+      "It fluctuates"
+    ],
+    "correctAnswer": "It increases",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What type of wave is a sound wave in air?",
+    "options": [
+      "Transverse",
+      "Longitudinal",
+      "Electromagnetic",
+      "Surface wave"
+    ],
+    "correctAnswer": "Longitudinal",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "The bending of light when it passes from one medium to another is called:",
+    "options": [
+      "Reflection",
+      "Refraction",
+      "Diffraction",
+      "Dispersion"
+    ],
+    "correctAnswer": "Refraction",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Which color of visible light has the shortest wavelength?",
+    "options": [
+      "Red",
+      "Yellow",
+      "Green",
+      "Violet"
+    ],
+    "correctAnswer": "Violet",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the phenomenon responsible for the blue color of the sky?",
+    "options": [
+      "Rayleigh Scattering",
+      "Total Internal Reflection",
+      "Interference",
+      "Polarization"
+    ],
+    "correctAnswer": "Rayleigh Scattering",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the SI unit of electrical resistance?",
+    "options": [
+      "Ampere",
+      "Volt",
+      "Ohm",
+      "Coulomb"
+    ],
+    "correctAnswer": "Ohm",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "According to Ohm's Law, what is the relationship between voltage (V), current (I), and resistance (R)?",
+    "options": [
+      "V = I / R",
+      "V = I × R",
+      "V = R / I",
+      "V = I + R"
+    ],
+    "correctAnswer": "V = I × R",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What device is used to convert mechanical energy into electrical energy?",
+    "options": [
+      "Electric Motor",
+      "Generator",
+      "Transformer",
+      "Resistor"
+    ],
+    "correctAnswer": "Generator",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Like magnetic poles always:",
+    "options": [
+      "Attract each other",
+      "Repel each other",
+      "Cancel each other out",
+      "Merge into one"
+    ],
+    "correctAnswer": "Repel each other",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Who formulated the Special Theory of Relativity?",
+    "options": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Niels Bohr",
+      "Marie Curie"
+    ],
+    "correctAnswer": "Albert Einstein",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the primary source of energy in the Sun?",
+    "options": [
+      "Nuclear Fission",
+      "Nuclear Fusion",
+      "Chemical Combustion",
+      "Gravitational Collapse"
+    ],
+    "correctAnswer": "Nuclear Fusion",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "What is the escape velocity from the Earth's surface approximately?",
+    "options": [
+      "5.5 km/s",
+      "11.2 km/s",
+      "25.0 km/s",
+      "42.1 km/s"
+    ],
+    "correctAnswer": "11.2 km/s",
+    "marks": 1
+  },
+  {
+    "category": "Physics",
+    "type": "MCQ",
+    "questionText": "Which subatomic particle has a negative charge?",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Electron",
+      "Positron"
+    ],
+    "correctAnswer": "Electron",
+    "marks": 1
+  }
+]
