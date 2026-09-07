@@ -6,10 +6,9 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-4.19-000000?logo=express&logoColor=white)](https://expressjs.com/)
 [![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Firestore-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-1.5_Flash-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> A full-stack, AI-powered academic quiz and assessment application built with **React Native (Expo)** and **Node.js / Express**, featuring intelligent short-answer semantic evaluation via **Google Gemini 1.5 Flash** and real-time data persistence with **Firebase (Auth & Firestore)**.
+> A full-stack academic quiz and assessment application built with **React Native (Expo)** and **Node.js / Express**, featuring interactive quizzes, comprehensive performance analytics, and real-time data persistence with **Firebase (Auth & Firestore)**.
 
 ---
 
@@ -37,20 +36,14 @@
 
 ## 🌟 Overview
 
-**QuizMaster** is designed to modernize academic testing by bridging multiple-choice assessments with descriptive, short-answer evaluations. Traditional quiz platforms restrict assessments to static MCQs due to the difficulty of automated descriptive grading. QuizMaster solves this by using **Google Gemini 1.5 Flash** to semantically grade short answers against reference conceptual rubrics in real-time, providing concise feedback to learners while maintaining a human-in-the-loop manual review interface for educators and admins.
+**QuizMaster** is an academic testing platform designed to deliver modern, engaging assessments for learners while providing educators and administrators with powerful management tools. It features timed quizzes across multiple subject categories, instant scoring, question bookmarking, global and category leaderboards, and historical performance tracking, backed by a real-time Firebase backend.
 
 ---
 
 ## ✨ Key Features
 
-### 🧠 AI-Powered Short-Answer Grading
-- **Semantic Understanding**: Uses Google Gemini 1.5 Flash to evaluate student responses conceptually rather than through rigid string matching.
-- **Tolerant & Fair**: Forgives minor spelling typos and phrasing differences while strictly checking for core concepts.
-- **Immediate Feedback**: Generates clear, pedagogical feedback (under 20 words) explaining why an answer is correct or what key concept was missed.
-- **Fallback Resilience**: In the event of network or AI service interruptions, responses are flagged and gracefully queued for administrator review without interrupting the quiz flow.
-
 ### 📝 Comprehensive Assessment Engine
-- **Mixed Question Types**: Supports both **Multiple Choice Questions (MCQ)** (1 mark) and **Short Answer** questions (5 marks).
+- **Multiple Question Formats**: Supports both **Multiple Choice Questions (MCQ)** and **Short Answer** questions.
 - **Custom Time Limits**: Configurable quiz duration timers with auto-submit upon expiration.
 - **Instant Result Breakdown**: Comprehensive scorecard displaying total score, percentage, earned marks, and review breakdowns for each question.
 - **Community Question Insights**: View post-quiz statistical distributions showing the percentage of all users who chose each option and global question success rates.
@@ -68,7 +61,7 @@
 ### 🛡️ Robust Admin Dashboard
 - **Category Management**: Create, edit, and delete quiz categories and adjust default timer durations.
 - **Question Bank CRUD**: Add, edit, or remove MCQs and Short-Answer questions dynamically.
-- **Human-in-the-Loop Review**: Dedicated portal for administrators to inspect student submissions, manually adjust marks, and override automated AI grading.
+- **Submission Review**: Dedicated portal for administrators to inspect student submissions and review marks.
 - **User Management**: Inspect registered users and perform cascading deletions across Firebase Auth, user profiles, and associated quiz attempt records.
 
 ---
@@ -81,9 +74,8 @@
 | **Framework & Router** | **Expo SDK 54** + **Expo Router v6** | File-based routing, deep linking, native compilation |
 | **Styling & UI** | **Expo Linear Gradient**, **Lucide Icons** | Modern dark-first design system with responsive card layouts |
 | **Client Storage** | **AsyncStorage** | Local persistence for Firebase Auth sessions and bookmarks |
-| **Backend Server** | **Node.js** + **Express.js 4** | RESTful API server for AI grading and aggregated stats |
+| **Backend Server** | **Node.js** + **Express.js 4** | RESTful API server for aggregated stats and user management |
 | **Language** | **TypeScript 5** | Strict end-to-end type safety |
-| **AI Evaluation Engine** | **Google Gemini 1.5 Flash** (`@google/generative-ai`) | Real-time semantic grading and pedagogical explanations |
 | **Authentication** | **Firebase Authentication** | Secure email/password login and user identity management |
 | **Database** | **Cloud Firestore** | Real-time NoSQL storage for questions, categories, stats, and history |
 | **Admin SDK** | **Firebase Admin SDK (v12)** | Privileged server-side Firestore batch operations and Auth management |
@@ -102,12 +94,10 @@ flowchart TD
 
     subgraph Backend ["Backend (Express & TypeScript)"]
         Server["Express REST API (Port 5001)"]
-        GeminiCtrl["Gemini Controller"]
         StatsCtrl["Stats & Leaderboard Controller"]
     end
 
     subgraph External ["Cloud Services"]
-        GeminiAI["Google Gemini 1.5 Flash API"]
         FirebaseAuth["Firebase Authentication"]
         Firestore["Cloud Firestore Database"]
     end
@@ -116,13 +106,10 @@ flowchart TD
     AuthCtx --> ClientService
     ClientService -->|Direct Auth / Reads| FirebaseAuth
     ClientService -->|Direct Reads / Bookmarks| Firestore
-    ClientService -->|Grade Short Answer| Server
     ClientService -->|Submit Quiz Stats| Server
     ClientService -->|Fetch Leaderboards & Stats| Server
 
-    Server --> GeminiCtrl
     Server --> StatsCtrl
-    GeminiCtrl -->|Semantic Evaluation| GeminiAI
     StatsCtrl -->|Batch Writes & Aggregation| Firestore
     StatsCtrl -->|User Deletion| FirebaseAuth
 ```
@@ -172,7 +159,6 @@ QuizMaster/
 │   │   ├── config/
 │   │   │   └── firebase.ts              # Firebase Admin SDK initialization
 │   │   ├── controllers/
-│   │   │   ├── geminiController.ts      # Google Gemini 1.5 Flash grading logic
 │   │   │   └── statsController.ts       # Quiz stats submission, leaderboard, user admin
 │   │   ├── index.ts                     # Express server setup and routes
 │   │   └── seed.ts                      # Firestore database seeder script
@@ -232,9 +218,7 @@ cd QuizMaster
 3. Create an environment configuration file `.env` in the `server` folder:
    ```env
    PORT=5001
-   GEMINI_API_KEY=your_google_gemini_api_key_here
    ```
-   > 🔑 Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/).
 
 4. Place your Firebase service account key in:
    ```
@@ -312,7 +296,6 @@ The Express server exposes the following endpoints:
 | Method | Endpoint | Description | Request Body / Params |
 |---|---|---|---|
 | `GET` | `/health` | Health check endpoint | None |
-| `POST` | `/api/grade-short-answer` | Evaluates a short answer using Gemini 1.5 Flash | `{ questionText, correctAnswer, userAnswer }` |
 | `POST` | `/api/submit-quiz-stats` | Submits quiz results, updates question stats & leaderboards | `{ userId, categoryId, categoryName, answers, score, totalQuestions, totalPossibleMarks }` |
 | `GET` | `/api/questions/:questionId/stats` | Fetches aggregate attempt and option distribution stats | `questionId` (path param) |
 | `GET` | `/api/leaderboard` | Fetches top 20 ranked users (global or category) | `?category=Physics` (optional query param) |
@@ -406,7 +389,7 @@ The Express server exposes the following endpoints:
 - **Standard Student / Learner**:
   - Sign up & authenticate via email/password.
   - Browse categories and take timed quizzes.
-  - Submit answers for automated AI evaluation.
+  - Submit answers and view instant scoring and results.
   - View individual results, answer keys, and statistical option distributions.
   - Bookmark questions and review quiz attempt history.
   - Compete on global and category leaderboards.
@@ -435,12 +418,7 @@ Ensure your phone and computer are on the same Wi-Fi network. Check that your co
 </details>
 
 <details>
-<summary><b>3. Gemini API returns 429 or quota errors</b></summary>
-Verify that your Gemini API key in <code>server/.env</code> has sufficient quota in Google AI Studio. If the API key is invalid or quota is exceeded, the server will log the error and short-answer questions will automatically fallback to queued manual admin review.
-</details>
-
-<details>
-<summary><b>4. How do I add new questions?</b></summary>
+<summary><b>3. How do I add new questions?</b></summary>
 You can add questions either directly through the <b>Admin Dashboard</b> inside the app or by appending items to <code>server/questions.json</code> and running <code>npm run seed</code> in the <code>server</code> directory.
 </details>
 
